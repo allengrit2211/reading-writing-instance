@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.UserMapper">
+
+    <resultMap type="com.example.entity.User" id="userBase">
+        <result property="id" column="id" />
+        <result property="name" column="name" />
+    </resultMap>
+
+    <select id="queryUserList" resultType="com.example.entity.User" resultMap="userBase">
+        SELECT id,name FROM t_user
+	</select>
+
+    <select id="selectUserList" resultType="com.example.entity.User" resultMap="userBase">
+        SELECT id,name FROM t_user
+	</select>
+
+    <select id="findUserList" resultType="com.example.entity.User" resultMap="userBase">
+        SELECT id,name FROM t_user
+	</select>
+
+    <select id="getUserList" resultType="com.example.entity.User" resultMap="userBase">
+        SELECT id,name FROM t_user
+	</select>
+
+    <insert id="saveUser">
+        INSERT INTO t_user values (#{id},#{name})
+    </insert>
+
+    <update id="updateUser">
+        UPDATE t_user SET name = #{name} WHERE id = #{id}
+    </update>
+
+</mapper>
