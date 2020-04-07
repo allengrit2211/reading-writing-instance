@@ -19,7 +19,7 @@ public class DataSourceAop {
         DataSourceContextHolder.read();
     }
 
-    @Before("execution(* com.example..mapper..*insert*(..)) || execution(* com.example..mapper..*save*(..)) || execution(* com.example..mapper..*update*(..)) ")
+    @Before("execution(* com.example..mapper..*insert*(..)) || execution(* com.example..mapper..*save*(..)) || execution(* com.example..mapper..*update*(..)) || execution(* com.example..mapper..*del*(..)) ")
     public void setWriteDataSourceType() {
         log.info("dataSource change：Write");
         DataSourceContextHolder.write();
